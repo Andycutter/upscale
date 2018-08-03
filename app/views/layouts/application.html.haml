@@ -13,6 +13,8 @@
       = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path
       = link_to 'Register', new_user_registration_path
       = link_to 'Sign in', new_user_session_path
+    - if current_user
+      = link_to 'Sign out', destroy_user_session_path
     = notice
     = flash[:error]
     = yield
