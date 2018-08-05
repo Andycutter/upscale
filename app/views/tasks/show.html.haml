@@ -1,8 +1,8 @@
-%h2= @task.title
+%h2.m-4= @task.title
 %p= @task.description
-%p= @task.location
-%p= @task.budget
-%p#state= @task.state.titleize
+%p.mt-4 Where: #{@task.location}
+%p.mt-2 Budget: #{@task.budget} SEK
+%p#state.m-4 Status: #{@task.state.titleize}
 
 = link_to "Let's do it", task_path(@task, event: :receive_bid), method: :put, remote: true, id: 'lets-do-it'
 = link_to "Send Counter offer", '#'

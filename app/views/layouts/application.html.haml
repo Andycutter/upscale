@@ -27,4 +27,5 @@
             = link_to 'Sign out', destroy_user_session_path
     = notice
     = flash[:error]
-    = yield
+    .bg-orange-lighter.text-center
+      = yield

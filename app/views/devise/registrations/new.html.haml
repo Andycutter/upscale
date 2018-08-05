@@ -1,26 +1,24 @@
-%h2 Sign up
+%h2.m-4 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .field.block.text-grey.font-bold.md:text-right.mb-1.md:mb-0.pr-4
+  .field.block.text-grey.m-2.font-bold.md:text-right.mb-1.md:mb-0.pr-4
     = f.label :name
     %br/
     = f.text_field :name, autofocus: true
-
-  .field.block.text-grey.font-bold.md:text-right.mb-1.md:mb-0.pr-4
+  .field.block.text-grey.m-2.font-bold.md:text-right.mb-1.md:mb-0.pr-4
     = f.label :email
     %br/
     = f.email_field :email, autocomplete: "email"
-  .field.block.text-grey.font-bold.md:text-right.mb-1.md:mb-0.pr-4
+  .field.block.text-grey.m-2.font-bold.md:text-right.mb-1.md:mb-0.pr-4
     = f.label :password
     - if @minimum_password_length
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
     = f.password_field :password, autocomplete: "new-password"
-  .field.block.border-solid.text-grey.font-bold.md:text-right.mb-1.md:mb-0.pr-4
+  .field.block.border-solid.m-2.text-grey.font-bold.md:text-right.mb-1.md:mb-0.pr-4
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions.block.text-grey.font-bold.md:text-right.mb-1.md:mb-0.pr-4
+  .actions.block.text-grey.mt-3.font-bold.md:text-right.mb-1.md:mb-0.pr-4
     = f.submit "Sign up"
-= render "devise/shared/links"
