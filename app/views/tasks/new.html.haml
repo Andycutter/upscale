@@ -1,14 +1,19 @@
 = form_with model: @task, remote: false do |form|
-    = form.label :title
-    = form.text_field :title
+    .field.block.text-orange.m-2.font-bold.md:text-center.mb-1.md:mb-0.pr-4   
+        = form.label :title
+        = form.text_field :title
     %br
-    = form.label :description
-    = form.text_area :description
+    .field.block.text-orange.m-2.font-bold.md:text-center.mb-1.md:mb-0.pr-4
+        = form.label :description
+        = form.text_area :description
     %br
-    = form.label :budget
-    = form.text_field :budget
+    .field.block.text-orange.m-2.font-bold.md:text-center.mb-1.md:mb-0.pr-4
+        = form.label :budget
+        = form.text_field :budget
     %br
-    = form.label :location
-    = form.text_field :location
+    .field.block.text-orange.m-2.font-bold.md:text-center.mb-1.md:mb-0.pr-4
+        = form.label :location
+        = form.text_field :location
     %br
-    = form.submit 'Post Task'
+    .field.block.text-orange.m-2.font-bold.md:text-center.mb-1.md:mb-0.pr-4
+        = form.submit 'Post Task'
