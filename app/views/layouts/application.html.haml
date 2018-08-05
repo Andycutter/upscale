@@ -7,22 +7,24 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', data: {'turbolinks-track' => 'reload'}
     = javascript_include_tag 'application', data: {'turbolinks-track' => 'reload'}
-  %body
-    %nav.flex.items-center.justify-between.flex-wrap.bg-teal.p-6
-      %p
-        = link_to 'Upscale', root_path
-      %p
-        = link_to 'Create New Task', new_task_path
-      - unless current_user 
-        %p
-          = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path
-        %p
-          = link_to 'Register', new_user_registration_path
-        %p
-          = link_to 'Sign in', new_user_session_path
-      - if current_user
-        %p
-          = link_to 'Sign out', destroy_user_session_path
+  %body.bg-orange-lightest
+    %nav.flex.items-center.justify-between.flex-wrap.bg-orange-dark.p-6
+      .w-full.block.flex-grow.lg:flex.lg:items-center.lg:w-auto
+        .text-sm.lg:flex-grow  
+          %p.inline-block.text-sm.px-4.py-2.leading-none.border.rounded.text-white.border-orange-darker.hover:border-transparent.hover:text-teal.hover:bg-orange-lighter.mt-4.lg:mt-0
+            = link_to 'Upscale', root_path
+        %p.inline-block.text-sm.px-4.py-2.mr-20.leading-none.border.rounded.text-white.border-orange-darker.hover:border-transparent.hover:text-teal.hover:bg-orange-lighter.mt-4.lg:mt-0
+          = link_to 'Create New Task', new_task_path
+        - unless current_user 
+          %p.inline-block.text-sm.px-4.py-2.mr-5.leading-none.border.rounded.text-white.border-orange-darker.hover:border-transparent.hover:text-teal.hover:bg-orange-lighter.mt-4.lg:mt-0
+            = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path
+          %p.inline-block.text-sm.px-4.py-2.mr-5.leading-none.border.rounded.text-white.border-orange-darker.hover:border-transparent.hover:text-teal.hover:bg-orange-lighter.mt-4.lg:mt-0
+            = link_to 'Sign in', new_user_session_path
+          %p.inline-block.text-sm.px-4.py-2.leading-none.border.rounded.text-white.border-orange-darker.hover:border-transparent.hover:text-teal.hover:bg-orange-lighter.mt-4.lg:mt-0
+            = link_to 'Register', new_user_registration_path
+        - if current_user
+          %p.inline-block.text-sm.px-4.py-2.leading-none.border.rounded.text-white.border-orange-darker.hover:border-transparent.hover:text-teal.hover:bg-orange-lighter.mt-4.lg:mt-0
+            = link_to 'Sign out', destroy_user_session_path
     = notice
     = flash[:error]
     = yield
