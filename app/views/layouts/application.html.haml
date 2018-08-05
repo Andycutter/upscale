@@ -8,15 +8,21 @@
     = stylesheet_link_tag    'application', media: 'all', data: {'turbolinks-track' => 'reload'}
     = javascript_include_tag 'application', data: {'turbolinks-track' => 'reload'}
   %body
-    %nav
-      = link_to 'Upscale', root_path
-      = link_to 'Create New Task', new_task_path
+    %nav.flex.items-center.justify-between.flex-wrap.bg-teal.p-6
+      %p
+        = link_to 'Upscale', root_path
+      %p
+        = link_to 'Create New Task', new_task_path
       - unless current_user 
-        = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path
-        = link_to 'Register', new_user_registration_path
-        = link_to 'Sign in', new_user_session_path
+        %p
+          = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path
+        %p
+          = link_to 'Register', new_user_registration_path
+        %p
+          = link_to 'Sign in', new_user_session_path
       - if current_user
-        = link_to 'Sign out', destroy_user_session_path
+        %p
+          = link_to 'Sign out', destroy_user_session_path
     = notice
     = flash[:error]
     = yield
